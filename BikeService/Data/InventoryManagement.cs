@@ -6,6 +6,7 @@ namespace Inventory.Data;
 
 public static class InventoryManagement
 {
+    // Serializes the given list of Inventory objects to a JSON string and writes it to a file on the local file system.
     private static void SaveAll(List<Inventory> inventories)
     {
         string appDataDirectoryPath = Utility.GetAppDirectoryPath();
@@ -19,7 +20,7 @@ public static class InventoryManagement
         var json = JsonSerializer.Serialize(inventories);
         File.WriteAllText(inventoryFilePath, json);
     }
-
+    // Reads a JSON string from a file on the local file system and deserializes it into a list of Inventory objects.
     public static List<Inventory> GetAll()
     {
         string inventoryFilePath = Utility.GetInventoryFilePath();
@@ -32,8 +33,9 @@ public static class InventoryManagement
 
         return JsonSerializer.Deserialize<List<Inventory>>(json);
     }
- 
 
+    /*Creates a new Inventory object with the given item name, quantity, and last taken out date, 
+     * adds it to the list of existing Inventory objects, and saves the updated list to the file.*/
     public static List<Inventory> Create(string item,int quantity, string lastTakenOut)
     {
         List<Inventory> inventories = GetAll();
@@ -66,7 +68,7 @@ public static class InventoryManagement
         }
        
     }
-
+    // Deletes the Inventory object with the given unique identifier from the list of existing Inventory objects
     public static List<Inventory> Delete(Guid id)
     {
    
@@ -82,7 +84,7 @@ public static class InventoryManagement
         SaveAll(inventories);
         return inventories;
     }
-
+    // Updates the item name and quantity of the Inventory object with the given unique identifier in the list of existing Inventory objects, and saves the updated list to the file
     public static List<Inventory> Update(Guid id, string item, int quantity)
     {
         List<Inventory> inventories = GetAll();
@@ -105,7 +107,7 @@ public static class InventoryManagement
             return inventories;
         }
     }
-
+    // Updates the quantity of the inventory after requests and validates if the requested item is in stock, and if the required field is properly filled.
     public static List<Inventory> UpdateByRequest(Guid id,int quantity,string takenBy)
     {
         List<Inventory> inventories = GetAll();

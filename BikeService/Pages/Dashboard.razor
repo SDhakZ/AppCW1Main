@@ -3,7 +3,18 @@
 @using BikeService.Data
 
 <nav class="navbar top-container">
-    <h1 class="top-title">Column chart for <span class="heading-info">Items taken out</span></h1>
+    @if (_sortDirection == "descending")
+    {
+        <h1 class="top-title">Column chart for <span class="heading-info">(Highest) Items taken out </span></h1>
+    }
+    @if (_sortDirection == "ascending")
+    {
+        <h1 class="top-title">Column chart for <span class="heading-info">(Lowest) Items taken out </span></h1>
+    }
+    <a class='btn-sort-top text-@(_sortBy == "quantity" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+       @onclick='()=>SortByHandler("quantity")'>Sort
+        <span class='sort-logo-top oi oi-sort-@(_sortBy == "quantity" ? _sortDirection : "ascending")' />
+    </a>
 </nav>
 
 <div class="bar-chart">

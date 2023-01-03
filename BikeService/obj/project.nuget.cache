@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PBEAV5MtCYInLDVzXnVGe8P5OU1rV8asvjESSTYZpOcH24t9DJlbuln5TqsvHo3tr2OBkt8dE/jc1rtvX3WDkQ==",
+  "dgSpecHash": "EGw3dg7rqvYpJeqEqs8k8qTXtJUHDNoPTED20FbMKK1OgvkYqGXtiR+4tt95EhwUbe5msbHmIe0vxkV7hFLL0w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OMEN\\Desktop\\BikeService\\BikeService\\BikeService.csproj",
+  "projectFilePath": "C:\\Users\\OMEN\\Desktop\\year3 sem1\\Application\\courework\\BikeService\\BikeService\\BikeService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OMEN\\.nuget\\packages\\googlegson\\2.9.0.1\\googlegson.2.9.0.1.nupkg.sha512",
     "C:\\Users\\OMEN\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.11\\microsoft.aspnetcore.authorization.6.0.11.nupkg.sha512",

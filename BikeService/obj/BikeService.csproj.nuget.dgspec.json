@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OMEN\\Desktop\\BikeService\\BikeService\\BikeService.csproj": {}
+    "C:\\Users\\OMEN\\Desktop\\year3 sem1\\Application\\courework\\BikeService\\BikeService\\BikeService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OMEN\\Desktop\\BikeService\\BikeService\\BikeService.csproj": {
+    "C:\\Users\\OMEN\\Desktop\\year3 sem1\\Application\\courework\\BikeService\\BikeService\\BikeService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OMEN\\Desktop\\BikeService\\BikeService\\BikeService.csproj",
+        "projectUniqueName": "C:\\Users\\OMEN\\Desktop\\year3 sem1\\Application\\courework\\BikeService\\BikeService\\BikeService.csproj",
         "projectName": "BikeService",
-        "projectPath": "C:\\Users\\OMEN\\Desktop\\BikeService\\BikeService\\BikeService.csproj",
+        "projectPath": "C:\\Users\\OMEN\\Desktop\\year3 sem1\\Application\\courework\\BikeService\\BikeService\\BikeService.csproj",
         "packagesPath": "C:\\Users\\OMEN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OMEN\\Desktop\\BikeService\\BikeService\\obj\\",
+        "outputPath": "C:\\Users\\OMEN\\Desktop\\year3 sem1\\Application\\courework\\BikeService\\BikeService\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

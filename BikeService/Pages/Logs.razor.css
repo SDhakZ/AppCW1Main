@@ -23,8 +23,20 @@
     }
 
     .table-row:nth-child(2n+1) {
-        background-color: #F8F5F1;
+        background-color: #fbfbfb;
     }
+
+.btn-sort {
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.sort-logo {
+    color: white;
+    font-size: 1rem;
+}
+
 
 
 .table-body {

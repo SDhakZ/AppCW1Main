@@ -54,6 +54,24 @@
     color: white;
     font-size: 1rem;
 }
+.btn-sort-top {
+    cursor: pointer;
+    padding: 0;
+    gap: 7px;
+    font-size: 1.35rem;
+    color: #579BB1 !important;
+    text-decoration: none;
+    font-weight: 600;
+    user-select: none; /* Standard */
+    display: flex;
+    align-items: center;
+}
+
+.sort-logo-top {
+    color: #579BB1;
+    font-size: 1.3rem;
+    margin-top: 0px;
+}
 
 .table-row-head {
     font-size: 1.2rem;

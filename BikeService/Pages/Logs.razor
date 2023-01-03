@@ -12,7 +12,12 @@
     <!-- Table header assignment. -->
     <thead>
         <tr class="table-head">
-            <th>Item</th>
+            <th>
+                Item  <a class='btn-sort text-@(_sortBy == "itemName" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                         @onclick='()=>SortByHandler("itemName")'>
+                    <span class='sort-logo oi oi-sort-@(_sortBy == "itemName" ? _sortDirection : "ascending")' />
+                </a>
+            </th>
             <th>Date</th>
             <th>Action Performed</th>
             <th>Action Performer</th>
@@ -20,7 +25,17 @@
     </thead>
     <!-- Table data assignment. -->
     <tbody class="table-body">
-        @foreach (var log in _logs)
+        @{
+            
+            IEnumerable<Log> logs = _logs;
+  
+            // Sort by item name.
+            if (_sortBy == "itemName")
+            {
+                logs = _sortDirection == "ascending" ? logs.OrderBy(t => t.Item) : logs.OrderByDescending(t =>
+                t.Item);
+            }
+              @foreach (var log in logs)
         {
             <tr class="table-row">
                 <td>@log.Item</td>
@@ -34,16 +49,33 @@
                     </td>
             </tr>
         }
+        }
     </tbody>
+        
+      
 </table>
 
 @code {
     [CascadingParameter]
     private GlobalState _globalState { get; set; }
     private List<Log> _logs { get; set; }
-
+    private string _sortBy = "itemName";
+    private string _sortDirection = "ascending";
     protected override void OnInitialized()
     {
         _logs = LogManagement.GetAll();
+    }
+
+    private void SortByHandler(string sortByName)
+    {
+        if (_sortBy == sortByName)
+        {
+            _sortDirection = _sortDirection == "ascending" ? "descending" : "ascending";
+        }
+        else
+        {
+            _sortBy = sortByName;
+            _sortDirection = "ascending";
+        }
     }
 }

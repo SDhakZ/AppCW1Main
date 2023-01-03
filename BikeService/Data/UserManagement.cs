@@ -10,6 +10,7 @@ public static class UserManagement
     public const string SeedUsername = "admin";
     public const string SeedPassword = "admin";
 
+    // Serializes the given list of Users objects to a JSON string and writes it to a file on the local file system.
     private static void SaveAll(List<User> users)
     {
         string appDataDirectoryPath = Utility.GetAppDirectoryPath();
@@ -24,7 +25,7 @@ public static class UserManagement
         File.WriteAllText(appUsersFilePath, json);
       
     }
-
+    // Reads a JSON string from a file on the local file system and deserializes it into a list of User objects.
     public static List<User> GetAll()
     {
         string appUsersFilePath = Utility.GetAppUsersFilePath();
@@ -37,6 +38,8 @@ public static class UserManagement
         return JsonSerializer.Deserialize<List<User>>(json);
     }
 
+    // This method adds a new User object to the list of Users and saves the updated list to the file in the application's data directory.
+    // It also checks admin count. 
     public static List<User> Create(Guid userId, string username, string password, UserRole UserRole)
     {
         List<User> users = GetAll();
@@ -79,6 +82,7 @@ public static class UserManagement
             return users;      
     }
 
+    // This method helps to seed user when there are no user at the beginning of the appllication.
     public static void SeedUsers()
     {
         var users = GetAll().FirstOrDefault(x => x.UserRole == UserRole.Admin);
@@ -96,7 +100,7 @@ public static class UserManagement
     }
 
 
-
+    // This method verifies the username and also the password (by checking hash) on login.
     public static User Login(string username, string password)
     {
         var loginErrorMessage = "Invalid username or password.";
@@ -118,6 +122,7 @@ public static class UserManagement
         return user;
     }
 
+    // This method hels to remove the user from list of users and save it.
     public static List<User> Delete(Guid id)
     {
         List<User> users = GetAll();

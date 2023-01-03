@@ -23,8 +23,20 @@
     }
 
     .table-row:nth-child(2n+1)[b-hykgt00h6x] {
-        background-color: #F8F5F1;
+        background-color: #fbfbfb;
     }
+
+.btn-sort[b-hykgt00h6x] {
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.sort-logo[b-hykgt00h6x] {
+    color: white;
+    font-size: 1rem;
+}
+
 
 
 .table-body[b-hykgt00h6x] {

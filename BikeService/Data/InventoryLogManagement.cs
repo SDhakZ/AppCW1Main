@@ -6,6 +6,7 @@ namespace InventoryLog.Data;
 
 public static class InventoryLogManagement
 {
+    // Serializes the given list of InventoryLog objects to a JSON string and writes it to a file on the local file system
     private static void SaveAll(List<InventoryLog> inventoryLogs)
     {
         string appDataDirectoryPath = Utility.GetAppDirectoryPath();
@@ -20,6 +21,7 @@ public static class InventoryLogManagement
         File.WriteAllText(inventoryLogFilePath, json);
     }
 
+    // Reads a JSON string from a file on the local file system and deserializes
     public static List<InventoryLog> GetAll()
     {
         string inventoryLogFilePath = Utility.GetInventoryLogFilePath();
@@ -33,7 +35,8 @@ public static class InventoryLogManagement
         return JsonSerializer.Deserialize<List<InventoryLog>>(json);
     }
 
-
+    /* Creates a new InventoryLog object with the given user identifier, quantity taken, item name, and taken by name,
+    adds it to the list of existing InventoryLog objects, and saves the updated list to the file. */
     public static List<InventoryLog> Create(Guid userId,int quantityTaken, string item,string takenBy)
     {
 

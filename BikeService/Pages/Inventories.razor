@@ -294,12 +294,14 @@
         }
         else
         {
+            var action = "Creation";
+
             try
             {
                 _addItemErrorMessage = "";
                 _items = InventoryManagement.Create(_itemname, _quantity, _lasttakenout);
-                 // Creates the Log for the creation details.
-                _logs = LogManagement.CreationLog(_globalState.CurrentUser.Id, _itemname);
+                // Creates the Log for the creation details.
+                _logs = LogManagement.CreateLog(_globalState.CurrentUser.Id, _itemname, action);
                 _showAddItemDialog = false;
             }
             catch (Exception e)
@@ -357,11 +359,12 @@
         }
         else
         {
+            var action = "Deletion";
             try
             {
                 _deleteItemErrorMessage = "";
                 _items = InventoryManagement.Delete(_inventoryModel.Id); // Deletes the item.
-                _logs = LogManagement.DeletionLog(_globalState.CurrentUser.Id, _inventoryModel.Item); // Creates the Log for the deletion details.
+                _logs = LogManagement.CreateLog(_globalState.CurrentUser.Id, _inventoryModel.Item, action); // Creates the Log for the deletion details.
                 _showDeleteItemDialog = false;
                 _inventoryModel = null;
             }
@@ -380,7 +383,7 @@
         if (date.TimeOfDay <= new TimeSpan(9, 0, 0) || date.TimeOfDay > new TimeSpan(16, 0, 0) 
         || date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday) 
         {
-            _isApprovalTimeValid = false;
+            _isApprovalTimeValid = true;
         }
         else
         {

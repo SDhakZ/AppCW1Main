@@ -55,6 +55,24 @@
     color: white;
     font-size: 1rem;
 }
+.btn-sort-top[b-yeezgv7tsq] {
+    cursor: pointer;
+    padding: 0;
+    gap: 7px;
+    font-size: 1.35rem;
+    color: #579BB1 !important;
+    text-decoration: none;
+    font-weight: 600;
+    user-select: none; /* Standard */
+    display: flex;
+    align-items: center;
+}
+
+.sort-logo-top[b-yeezgv7tsq] {
+    color: #579BB1;
+    font-size: 1.3rem;
+    margin-top: 0px;
+}
 
 .table-row-head[b-yeezgv7tsq] {
     font-size: 1.2rem;
@@ -245,7 +263,7 @@ th[b-az9dg04r6i] {
     }
 
     .table-row:nth-child(2n+1)[b-az9dg04r6i] {
-        background-color: #F8F5F1;
+        background-color: #fbfbfb;
     }
 
 
@@ -400,7 +418,7 @@ th[b-az9dg04r6i] {
     }
 
     .table-row:nth-child(2n+1)[b-vpf6c51qla] {
-        background-color: #F8F5F1;
+        background-color: #fbfbfb;
     }
 
 
@@ -730,8 +748,20 @@ input[type=text][b-fb6yqns932],input[type=password][b-fb6yqns932] {
     }
 
     .table-row:nth-child(2n+1)[b-hykgt00h6x] {
-        background-color: #F8F5F1;
+        background-color: #fbfbfb;
     }
+
+.btn-sort[b-hykgt00h6x] {
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.sort-logo[b-hykgt00h6x] {
+    color: white;
+    font-size: 1rem;
+}
+
 
 
 .table-body[b-hykgt00h6x] {
@@ -830,7 +860,7 @@ input[type=text][b-fb6yqns932],input[type=password][b-fb6yqns932] {
     }
 
     .table-row:nth-child(2n+1)[b-jnu2uyi71k] {
-        background-color: #F8F5F1;
+        background-color: #fbfbfb;
     }
 
 

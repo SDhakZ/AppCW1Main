@@ -40,7 +40,7 @@
         try
         {
             _errorMessage = "";
-            _globalState.CurrentUser = UserManagement.Login(_username, _password); // Credentials validation
+            _globalState.CurrentUser = UserManagement.Login(_username, _password); // Credentials validation.
             if (_globalState.CurrentUser != null)
             {
                 NavManager.NavigateTo("/inventory");

@@ -17,7 +17,6 @@
                 <span class="oi oi-plus plusIcon" /> Add Items
             </button>
         }
-        
     </div>
 </nav>
 
@@ -401,7 +400,7 @@
     private void OnRequestItemDialogClose(bool isCancel) 
     {
         var staff="";
-        // Check if username exists amongst staff names for storing existing value in variable
+        // Check if username exists amongst staff names for storing existing value in variable.
         foreach (var user in _users)
         {
             if (_takenBy.ToLower() == user.Username.ToLower())

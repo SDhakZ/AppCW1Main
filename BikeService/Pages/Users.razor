@@ -8,7 +8,7 @@
     </button>
 </nav>
 <table class="table main-table">
-    <!-- Table header assignment -->
+    <!-- Table header assignment. -->
     <thead>
         <tr class="table-head">
             <th>Username</th>
@@ -18,7 +18,7 @@
             <th>Actions</th>
         </tr>
     </thead>
-    <!-- Table data assignment -->
+    <!-- Table data assignment. -->
     <tbody class="table-body">
         @foreach (var user in _users)
         {
@@ -33,7 +33,7 @@
                     }
                 </td>
                 <td>
-                    <!-- Disable for current user--> 
+                    <!-- Disable for current user. --> 
                     <button disabled="@(_globalState.CurrentUser != null ? _globalState.CurrentUser.Id == user.Id : false)"
                         class="btn btn-outline-danger" type="button" @onclick="()=>OpenDeleteUserDialog(user)">
                         <span class="oi oi-trash" /> Delete
@@ -135,7 +135,7 @@
             }
         }
     }
-    // Assign user role according to selected
+    // Assign user role according to selected.
     private void UserRoleChangeHandler(ChangeEventArgs e)
     {
         _UserRole = (UserRole)Enum.Parse(typeof(UserRole), e.Value.ToString());

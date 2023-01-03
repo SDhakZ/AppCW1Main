@@ -26,13 +26,13 @@
             {
                 <input type="search" class="search-bar" placeholder="Search by item taker" @oninput="SearchTakenBy" />
             }
-            // Checks value for radio button to search according to Item name
+            // Checks value for radio button to search according to Item name.
             if (_searchBy == "Item" || _searchBy == null) 
             {
                 <input type="search" class="search-bar" placeholder="Search by item name" @oninput="SearchItemName" />
             }
         }
-        <!-- Radio button for search -->
+        <!-- Radio button for search. -->
         <div class="radio-container"> 
             <input type="radio" checked id="item" name="searchBy" @onchange="@(() => SearchBy("Item"))">
             <label for="item">By item name</label><br>
@@ -40,7 +40,7 @@
             <label for="owner" >By item taker</label><br>
         </div>
     </div>
-    <!-- Dropdown for month filtering -->
+    <!-- Dropdown for month filtering. -->
     <select @bind="_month" @onclick="()=>FilterByMonth()" class="dropdown" name="month">
         <option value="" disabled selected hidden>Sort By Month</option>
         <option value="">All Months</option>
@@ -58,9 +58,9 @@
         <option value="December">December</option>
     </select>
 </div>
-<!-- Table for inventory logs -->
+<!-- Table for inventory logs. -->
 <table class="table main-table">
-    <!-- Table header assignment -->
+    <!-- Table header assignment. -->
     <thead>
         <tr class="table-row-head">
             <th>
@@ -82,7 +82,7 @@
             <th>Date Taken Out</th>
         </tr>
     </thead>
-    <!-- Table data assignment -->
+    <!-- Table data assignment. -->
     <tbody class="table-body">
         @{
             IEnumerable<InventoryLog> inventoryLog = _inventoryLogs;
@@ -156,7 +156,7 @@
             _inventoryLogs = InventoryLogManagement.GetAll();
         }
     }
-    // Search handler
+    // Search handler.
     private void Search(ChangeEventArgs e, Func<InventoryLog, bool> searchPredicate) 
     {
         var searchTerm = e.Value.ToString();
@@ -180,7 +180,7 @@
     {
         Search(e, t => t.RequestedItem.ToLower().Contains(e.Value.ToString().ToLower()));
     }
-    // Assigns radio button value
+    // Assigns radio button value.
     private void SearchBy(string searchby)
     {
         _searchBy = searchby;

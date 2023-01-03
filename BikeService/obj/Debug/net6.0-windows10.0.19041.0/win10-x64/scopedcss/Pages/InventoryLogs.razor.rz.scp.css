@@ -1,0 +1,134 @@
+
+
+
+.heading-month[b-vpf6c51qla] {
+    color: #398AB9;
+    font-weight: 700;
+}
+
+
+.filter-container[b-vpf6c51qla] {
+    margin-top: 30px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.search-bar[b-vpf6c51qla] {
+    outline: none;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 2px;
+    font-size: 1rem;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    width: 23%;
+    min-width: 250px;
+    border: 2px solid #808080;
+}
+
+    .search-bar[b-vpf6c51qla]::placeholder {
+        color: #B2B2B2;
+    }
+
+    .search-bar:focus[b-vpf6c51qla] {
+        border: 2px solid #0093d9;
+    }
+
+
+.search-container[b-vpf6c51qla]{
+    display:flex;
+   
+    gap:10px;
+    flex-direction:column;
+}
+.radio-container[b-vpf6c51qla] {
+    display: flex;
+    gap:5px;
+    font-size:0.8rem;
+}
+
+
+
+.dropdown[b-vpf6c51qla] {
+    outline: none;
+    border: 2px solid #808080;
+    padding: 8px 10px;
+    border-radius: 2px;
+    font-size: 1rem;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    width: 20%;
+    min-width: 230px;
+    cursor: pointer;
+    height:fit-content;
+}
+
+    .dropdown:focus[b-vpf6c51qla] {
+        border: 2px solid #0093d9;
+    }
+
+/*------Table settings------*/
+
+.main-table[b-vpf6c51qla] {
+    margin-top: 13px;
+}
+
+.table-row-head[b-vpf6c51qla] {
+    font-size: 1.2rem;
+    background-color: #444444;
+    margin-bottom: 0;
+    color: white;
+    user-select: none; /* Standard */
+}
+
+    th[b-vpf6c51qla] {
+        font-weight: 600;
+    }
+
+.btn-sort[b-vpf6c51qla] {
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.sort-logo[b-vpf6c51qla] {
+    color: white;
+    font-size: 1rem;
+}
+
+
+.table-row[b-vpf6c51qla] {
+    border-bottom: 1px groove #444444;
+}
+
+    .table-row:nth-child(2n)[b-vpf6c51qla] {
+        background-color: #E1E5EA;
+    }
+
+    .table-row:nth-child(2n+1)[b-vpf6c51qla] {
+        background-color: #F8F5F1;
+    }
+
+
+.table-body[b-vpf6c51qla] {
+    border-bottom: 2px solid #444444;
+}
+
+.table-row td[b-vpf6c51qla] {
+    font-size: 1rem;
+   
+}
+
+.edit[b-vpf6c51qla] {
+    margin-right: 10px;
+}
+
+@media (max-width: 769px) {
+    .table-row-head[b-vpf6c51qla] {
+        font-size: 0.85rem;
+    }
+
+    .table-row td[b-vpf6c51qla] {
+        font-size: 0.9rem;
+    }
+}

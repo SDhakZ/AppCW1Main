@@ -1,0 +1,50 @@
+
+/*------Table settings------*/
+.main-table[b-hykgt00h6x] {
+    margin-top: 30px;
+}
+
+.table-head[b-hykgt00h6x] {
+    font-size: 1.3rem;
+    background-color: #444444;
+    margin-bottom: 0;
+    color: white;
+    font-weight: 900;
+    user-select: none; /* Standard */
+}
+
+
+.table-row[b-hykgt00h6x] {
+    border-bottom: 1px groove #444444;
+}
+
+    .table-row:nth-child(2n)[b-hykgt00h6x] {
+        background-color: #E1E5EA;
+    }
+
+    .table-row:nth-child(2n+1)[b-hykgt00h6x] {
+        background-color: #F8F5F1;
+    }
+
+
+.table-body[b-hykgt00h6x] {
+    border-bottom: 2px solid #444444;
+}
+
+.table-row td[b-hykgt00h6x] {
+    font-size: 1.1rem;
+}
+
+.edit[b-hykgt00h6x]{
+    margin-right:10px;
+}
+
+@media (max-width: 769px) {
+    .table-head[b-hykgt00h6x] {
+        font-size: 0.85rem;
+    }
+
+    .table-row td[b-hykgt00h6x] {
+        font-size: 0.9rem;
+    }
+}

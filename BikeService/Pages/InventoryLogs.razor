@@ -1,0 +1,188 @@
+﻿@page "/inventorylogs"
+@using InventoryLog.Data
+@using BikeService.Data
+
+<nav class="navbar top-container">
+
+    @{
+        // Checks if the dropdown box has a month selected.
+        if (string.IsNullOrEmpty(_month)) 
+        {
+            <h1 class="top-title">Inventory Logs</h1>
+        }
+        else
+        {
+            <h1 class="top-title">Inventory Logs for the month of <span class="heading-month">@_month</span></h1>
+        }
+    }
+</nav>
+
+<div class="filter-container">
+    <!-- Search Bar -->
+    <div class="search-container">
+        @{
+            // Checks value for radio button to search according to owner.
+            if (_searchBy == "Owner" ) 
+            {
+                <input type="search" class="search-bar" placeholder="Search by item taker" @oninput="SearchTakenBy" />
+            }
+            // Checks value for radio button to search according to Item name
+            if (_searchBy == "Item" || _searchBy == null) 
+            {
+                <input type="search" class="search-bar" placeholder="Search by item name" @oninput="SearchItemName" />
+            }
+        }
+        <!-- Radio button for search -->
+        <div class="radio-container"> 
+            <input type="radio" checked id="item" name="searchBy" @onchange="@(() => SearchBy("Item"))">
+            <label for="item">By item name</label><br>
+            <input type="radio" id="owner" name="searchBy"  @onchange="@(() => SearchBy("Owner"))">
+            <label for="owner" >By item taker</label><br>
+        </div>
+    </div>
+    <!-- Dropdown for month filtering -->
+    <select @bind="_month" @onclick="()=>FilterByMonth()" class="dropdown" name="month">
+        <option value="" disabled selected hidden>Sort By Month</option>
+        <option value="">All Months</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+    </select>
+</div>
+<!-- Table for inventory logs -->
+<table class="table main-table">
+    <!-- Table header assignment -->
+    <thead>
+        <tr class="table-row-head">
+            <th>
+                Item
+                <a class='btn-sort text-@(_sortBy == "taskName" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                   @onclick='()=>SortByHandler("taskName")'>
+                    <span class='sort-logo oi oi-sort-@(_sortBy == "taskName" ? _sortDirection : "ascending")' />
+                </a>
+            </th>
+            <th>
+                Quantity
+                <a class='btn-sort text-@(_sortBy == "quantity" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                   @onclick='()=>SortByHandler("quantity")'>
+                    <span class='sort-logo oi oi-sort-@(_sortBy == "quantity" ? _sortDirection : "ascending")' />
+                </a>
+            </th>
+            <th>Approved By</th>
+            <th>Taken By</th>
+            <th>Date Taken Out</th>
+        </tr>
+    </thead>
+    <!-- Table data assignment -->
+    <tbody class="table-body">
+        @{
+            IEnumerable<InventoryLog> inventoryLog = _inventoryLogs;
+            if (_sortBy == "taskName")
+            {
+                inventoryLog = _sortDirection == "ascending" ? inventoryLog.OrderBy(t => t.RequestedItem) : inventoryLog.OrderByDescending(t =>
+                t.RequestedItem);
+            }
+            else if (_sortBy == "quantity")
+            {
+                inventoryLog = _sortDirection == "ascending" ? inventoryLog.OrderBy(t => t.QuantityTaken) : inventoryLog.OrderByDescending(t =>
+                t.QuantityTaken);
+            }
+
+            @foreach (var log in inventoryLog)
+            {
+                <tr class="table-row">
+                    <td>@log.RequestedItem</td>
+                    <td>@log.QuantityTaken</td>
+                    <td>
+                        @{
+                            var creator = UserManagement.GetById(log.ApprovedBy);
+                            <span>@(creator.Username)</span>
+                        }
+                    </td>
+                    <td>@log.TakenBy</td>
+                    <td>@log.DateTakenOut.ToString("MMM dd, yyyy h:mm tt")</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+    private List<InventoryLog> _inventoryLogs { get; set; }
+    private string _sortBy = "dueDate";
+    private string _sortDirection = "ascending";
+    private string _month { get; set; }
+    private string _searchBy { get; set; }
+
+    protected override void OnInitialized()
+    {
+        _inventoryLogs = InventoryLogManagement.GetAll();
+    }
+
+    private void SortByHandler(string sortByName)
+    {
+        if (_sortBy == sortByName)
+        {
+            _sortDirection = _sortDirection == "ascending" ? "descending" : "ascending";
+        }
+        else
+        {
+            _sortBy = sortByName;
+            _sortDirection = "ascending";
+        }
+    }
+    // Filters the data according to month.
+    private void FilterByMonth() 
+    {
+        var searchTerm = _month;
+        if (!string.IsNullOrEmpty(searchTerm))
+        {
+            _inventoryLogs = InventoryLogManagement.GetAll().Where(t =>
+            t.DateTakenOut.ToString("MMMM").Contains(searchTerm)).ToList();
+        }   
+        else
+        {
+            _inventoryLogs = InventoryLogManagement.GetAll();
+        }
+    }
+    // Search handler
+    private void Search(ChangeEventArgs e, Func<InventoryLog, bool> searchPredicate) 
+    {
+        var searchTerm = e.Value.ToString();
+        _month = "";
+        if (!string.IsNullOrEmpty(searchTerm) && searchTerm.Length > 1)
+        {
+            _inventoryLogs = InventoryLogManagement.GetAll().Where(searchPredicate).ToList();
+        }
+        else
+        {
+            _inventoryLogs = InventoryLogManagement.GetAll();
+        }
+    }
+    // Search by item taker.
+    private void SearchTakenBy(ChangeEventArgs e) 
+    {
+        Search(e, t => t.TakenBy.ToLower().Contains(e.Value.ToString().ToLower()));
+    }
+    // Search by Item name.
+    private void SearchItemName(ChangeEventArgs e) 
+    {
+        Search(e, t => t.RequestedItem.ToLower().Contains(e.Value.ToString().ToLower()));
+    }
+    // Assigns radio button value
+    private void SearchBy(string searchby)
+    {
+        _searchBy = searchby;
+    }
+}

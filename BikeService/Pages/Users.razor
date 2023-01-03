@@ -1,0 +1,173 @@
+﻿@page "/users"
+@using BikeService.Data
+
+<nav class="navbar top-container">
+    <h1 class="top-title">User Manager</h1>
+    <button class="btn btn-primary add-btn" type="button" @onclick="OpenAddUserDialog">
+        <span class="oi oi-plus plusIcon" /> Add Users
+    </button>
+</nav>
+<table class="table main-table">
+    <!-- Table header assignment -->
+    <thead>
+        <tr class="table-head">
+            <th>Username</th>
+            <th>User Role</th>
+            <th>Creation date</th>
+            <th>User Creator</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <!-- Table data assignment -->
+    <tbody class="table-body">
+        @foreach (var user in _users)
+        {
+            <tr class="table-row">
+                <td>@user.Username</td>
+                <td>@user.UserRole.ToString()</td>
+                <td>@user.CreatedAt.ToString("MMM dd, yyyy h:mm tt")</td>
+                <td>
+                    @{
+                        var creator = UserManagement.GetById(user.CreatedBy);
+                        <span>@(creator == null ? "System" : creator.Username)</span>
+                    }
+                </td>
+                <td>
+                    <!-- Disable for current user--> 
+                    <button disabled="@(_globalState.CurrentUser != null ? _globalState.CurrentUser.Id == user.Id : false)"
+                        class="btn btn-outline-danger" type="button" @onclick="()=>OpenDeleteUserDialog(user)">
+                        <span class="oi oi-trash" /> Delete
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@if (_showAddUserDialog)
+{
+    <ModalDialog Title="Add User" OnClose="@OnAddUserDialogClose" OkLabel="Add">
+        <form>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control username" @bind="_username" placeholder="Username" />
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control password" @bind="_password" placeholder="Password" />
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-check">
+                <input id="UserRole" type="radio" class="form-check-input" name="UserRole" value="@UserRole.Staff"
+                   @onchange="UserRoleChangeHandler" checked="@(_UserRole == UserRole.Staff)">
+                <label class="form-check-label" for="UserRole">@UserRole.Staff</label>
+            </div>
+            <div class="form-check mb-3">
+                <input id="adminUserRole" type="radio" class="form-check-input" name="UserRole" value="@UserRole.Admin"
+                   @onchange="UserRoleChangeHandler" checked="@(_UserRole == UserRole.Admin)">
+                <label class="form-check-label" for="adminUserRole">@UserRole.Admin</label>
+            </div>
+            @if (!string.IsNullOrEmpty(_addUserErrorMessage))
+            {
+                <Alert Type="danger" Message="@_addUserErrorMessage" />
+            }
+        </form>
+    </ModalDialog>
+}
+
+@if (_showDeleteUserDialog)
+{
+    <ModalDialog Title="Delete User" OnClose="@OnDeleteUserDialogClose" OkLabel="Confirm">
+        <div class="icon-box">
+            <i class="material-icons">&#xE5CD;</i>
+        </div>
+        <p class="warning-message">Are you sure you want to delete <strong>@_deleteUser.Username</strong> user and their data?</p>
+        @if (!string.IsNullOrEmpty(_deleteUserErrorMessage))
+        {
+            <Alert Type="danger" Message="@_deleteUserErrorMessage" />
+        }
+        </ModalDialog>
+}
+
+@code {
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+    private List<User> _users { get; set; }
+    private bool _showAddUserDialog { get; set; }
+    private bool _showDeleteUserDialog { get; set; }
+    private string _addUserErrorMessage { get; set; }
+    private string _deleteUserErrorMessage { get; set; }
+    private User _deleteUser { get; set; }
+    private string _username { get; set; }
+    private string _password { get; set; }
+    private UserRole _UserRole { get; set; }
+
+    protected override void OnInitialized()
+    {
+        _users = UserManagement.GetAll();
+    }
+
+    private void OpenAddUserDialog()
+    {
+        _showAddUserDialog = true;
+        _username = "";
+        _password = "";
+        _UserRole = UserRole.Staff;
+    }
+    private void OnAddUserDialogClose(bool isCancel)
+    {
+        if (isCancel)
+        {
+            _addUserErrorMessage = "";
+            _showAddUserDialog = false;
+        }
+        else
+        {
+            try
+            {
+                _addUserErrorMessage = "";
+                _users = UserManagement.Create(_globalState.CurrentUser.Id, _username, _password, _UserRole);
+                _showAddUserDialog = false;
+            }
+            catch (Exception e)
+            {
+                _addUserErrorMessage = e.Message;
+            }
+        }
+    }
+    // Assign user role according to selected
+    private void UserRoleChangeHandler(ChangeEventArgs e)
+    {
+        _UserRole = (UserRole)Enum.Parse(typeof(UserRole), e.Value.ToString());
+    }
+
+    private void OpenDeleteUserDialog(User user)
+    {
+        _deleteUser = user;
+        _showDeleteUserDialog = true;
+    }
+
+    private void OnDeleteUserDialogClose(bool isCancel)
+    {
+        if (isCancel)
+        {
+
+            _showDeleteUserDialog = false;
+            _deleteUser = null;
+        }
+        else
+        {
+            try
+            {
+                _deleteUserErrorMessage = "";
+                _users = UserManagement.Delete(_deleteUser.Id);
+                _showDeleteUserDialog = false;
+                _deleteUser = null;
+            }
+            catch (Exception e)
+            {
+                _deleteUserErrorMessage = e.Message;
+            }
+        }
+    }
+}

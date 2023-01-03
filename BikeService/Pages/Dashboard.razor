@@ -1,0 +1,186 @@
+﻿@page "/dashboard"
+@using InventoryLog.Data
+@using BikeService.Data
+
+<nav class="navbar top-container">
+    <h1 class="top-title">Column chart for <span class="heading-info">Items taken out</span></h1>
+</nav>
+
+<div class="bar-chart">
+    <div class="mudChart">
+        @{
+            Dictionary<string, int> requestedData = new Dictionary<string, int>();
+            @*Iterates and add items in dictionary*@
+            foreach (var item in _inventoryLogs) 
+            {
+                string itemName = item.RequestedItem;
+                int totalQuantity = item.QuantityTaken;
+                if (!requestedData.ContainsKey(itemName))
+                {
+                    requestedData[itemName] = totalQuantity;
+                }
+                else
+                {
+                    requestedData[itemName] += totalQuantity;
+                }
+            }
+            @*Storing items in array*@
+            labels = requestedData.Keys.ToArray();
+            data = requestedData.Values.Select(x => (double)x).ToArray();
+            @*Sorting ascending and Descending for MudChart*@
+            @if (_sortDirection == "ascending")
+            {
+
+                var sortedData = data.Zip(labels, (d, l) => (d, l)).OrderBy(x => x.d).ToArray();
+                data = sortedData.Select(x => x.d).Take(5).ToArray();
+                labels = sortedData.Select(x => x.l).Take(5).ToArray();
+            }
+            @if (_sortDirection == "descending")
+            {
+
+                var sortedData = data.Zip(labels, (d, l) => (d, l)).OrderByDescending(x => x.d).ToArray();
+                data = sortedData.Select(x => x.d).Take(5).ToArray();
+                labels = sortedData.Select(x => x.l).Take(5).ToArray();
+            }
+            Series = new List<ChartSeries>()
+        {
+        new ChartSeries() { Name="Quantity", Data = data }
+        };
+            XAxisLabels = labels;
+        }
+        @*MudChart setttings*@
+        <MudChart ChartType="ChartType.Bar" ChartSeries="@Series" LegendPosition="Position.Top" XAxisLabels="@XAxisLabels" Width="100%" Height="500px">
+            <CustomGraphics>
+                @*Mudchart style injections*@
+                <style>
+
+                    .mud-chart-bar {
+                        stroke-width: 10px;
+                        stroke: #FF6F6F;
+                    }
+
+                    .mud-charts-gridlines-yaxis path {
+                        stroke: #456268;
+                    }
+
+
+                    .mud-chart-line .mud-charts-yaxis {
+                        fill: #456268;
+                        stroke-width: 1px;
+                    }
+
+                    .mud-charts-yaxis text {
+                        font-size: 10px;
+                        text-anchor: end;
+                        margin-right: 20px !important;
+                    }
+
+                    .mud-charts-xaxis {
+                        fill: #272727;
+                    }
+
+                        .mud-charts-xaxis text {
+                            font-size: 0.6rem;
+                        }
+
+                    .mud-chart-legend-item span {
+                        background-color: #FF6F6F !important;
+                        margin-right: 5px;
+                        height: 12px !important;
+                        width: 12px !important;
+                    }
+
+                    .mud-chart-legend-item p {
+                        color: #272727;
+                        font-family: 'Segoe UI';
+                        font-size: 1rem;
+                        font-weight: 500;
+                    }
+
+                    .heavy {
+                        font: Italic 11px 'Segoe UI';
+                        font-weight: 600;
+                        fill: #2C3639;
+                    }
+
+                </style>
+                <text x="210" y="10" class="heavy">X-axis: Item names</text>
+                <text x="340" y="10" class="heavy">Y-axis:  Number taken out</text>
+            </CustomGraphics>
+        </MudChart>
+    </div>
+
+    @*Table display*@
+    <table class="table main-table">
+        <thead>
+            <tr class="table-row-head">
+                <th>Item </th>
+                <th>
+                    Number taken out
+                    <a class='btn-sort text-@(_sortBy == "quantity" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                       @onclick='()=>SortByHandler("quantity")'>
+                        <span class='sort-logo oi oi-sort-@(_sortBy == "quantity" ? _sortDirection : "ascending")' />
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            @{
+                @*Sort according to ascending or descending quantity in table*@
+                @if (_sortDirection == "ascending")
+                {
+                    @foreach (KeyValuePair<string, int> entry in requestedData.OrderBy(x => x.Value))
+                    {
+                        <tr class="table-row">
+                            <td>@entry.Key </td>
+                            <td> @entry.Value</td>
+                        </tr>
+                    }
+                }
+                @if (_sortDirection == "descending")
+                {
+                    @foreach (KeyValuePair<string, int> entry in requestedData.OrderByDescending(x => x.Value))
+                    {
+                        <tr class="table-row">
+                            <td>@entry.Key </td>
+                            <td>@entry.Value</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+    private List<InventoryLog> _inventoryLogs { get; set; }
+    private string _itemName { get; set; }
+    private int _total { get; set; }
+    static double[] data;
+    static string[] labels;
+    private string _sortBy = "quantity";
+    private string _sortDirection = "descending";
+    public List<ChartSeries> Series;
+    public string[] XAxisLabels;
+
+    protected override void OnInitialized()
+    {
+        _inventoryLogs = InventoryLogManagement.GetAll();
+
+    }
+
+    private void SortByHandler(string sortByName) 
+    {
+        if (_sortBy == sortByName)
+        {
+            _sortDirection = _sortDirection == "ascending" ? "descending" : "ascending";
+        }
+        else
+        {
+            _sortBy = sortByName;
+            _sortDirection = "ascending";
+        }
+    }
+}

@@ -1,0 +1,50 @@
+﻿@page "/logs"
+@using Log.Data
+@using BikeService.Data
+
+<nav class="navbar top-container">
+    <h1 class="top-title">Creation and Deletion Logs</h1>
+        <a class="btn btn-primary add-btn" href="/inventory">
+        <span class="oi oi-arrow-left mx-1" /> Go Back
+          </a>
+</nav>
+<table class="table main-table">
+    <!-- Table header assignment -->
+    <thead>
+        <tr class="table-head">
+            <th>Item</th>
+            <th>Date</th>
+            <th>Action Performed</th>
+            <th>Action Performer</th>
+            @* <th>Item Creation Date</th>*@
+        </tr>
+    </thead>
+    <!-- Table data assignment -->
+    <tbody class="table-body">
+        @foreach (var log in _logs)
+        {
+            <tr class="table-row">
+                <td>@log.Item</td>
+                <td>@log.ItemDate.ToString("MMM dd, yyyy h:mm tt")</td>
+                <td>@log.ActionPerformed</td>
+                <td>
+                    @{
+                        var creator = UserManagement.GetById(log.ActionPerformer);
+                            <span>@(creator == null ? "Unknown" : creator.Username)</span>
+                    }
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+    private List<Log> _logs { get; set; }
+
+    protected override void OnInitialized()
+    {
+        _logs = LogManagement.GetAll();
+    }
+}

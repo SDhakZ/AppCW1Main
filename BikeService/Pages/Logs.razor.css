@@ -1,0 +1,50 @@
+﻿
+/*------Table settings------*/
+.main-table {
+    margin-top: 30px;
+}
+
+.table-head {
+    font-size: 1.3rem;
+    background-color: #444444;
+    margin-bottom: 0;
+    color: white;
+    font-weight: 900;
+    user-select: none; /* Standard */
+}
+
+
+.table-row {
+    border-bottom: 1px groove #444444;
+}
+
+    .table-row:nth-child(2n) {
+        background-color: #E1E5EA;
+    }
+
+    .table-row:nth-child(2n+1) {
+        background-color: #F8F5F1;
+    }
+
+
+.table-body {
+    border-bottom: 2px solid #444444;
+}
+
+.table-row td {
+    font-size: 1.1rem;
+}
+
+.edit{
+    margin-right:10px;
+}
+
+@media (max-width: 769px) {
+    .table-head {
+        font-size: 0.85rem;
+    }
+
+    .table-row td {
+        font-size: 0.9rem;
+    }
+}

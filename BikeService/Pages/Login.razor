@@ -1,0 +1,54 @@
+﻿@page "/login"
+@using BikeService.Data
+@inject NavigationManager NavManager
+<div class="wrapper fadeInDown">
+    @if (_showDefaultCredentials)
+    {
+        <div class="alert alert-info" UserRole="alert">
+            Username: <strong>@UserManagement.SeedUsername</strong><br />
+            Password: <strong>@UserManagement.SeedPassword</strong>
+        </div>
+    }
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="active"> Log In </h2>
+        <!-- Login Form -->
+        <form @onsubmit="LoginHandler">
+            <input autocomplete="off" type="text" id="login" class="fadeIn second" name="login" @bind="_username" placeholder="Username">
+            <input autocomplete="off" type="password" id="password" class="fadeIn third" name="login" @bind="_password" placeholder="Password">
+            @if (!string.IsNullOrEmpty(_errorMessage))
+            {
+                <Alert Type="danger" Message="@_errorMessage" />
+            }
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+    private bool _showDefaultCredentials { get; set; }
+    private string _username { get; set; }
+    private string _password { get; set; }
+    private string _errorMessage = "";
+
+
+
+    private void LoginHandler()
+    {
+        try
+        {
+            _errorMessage = "";
+            _globalState.CurrentUser = UserManagement.Login(_username, _password); // Credentials validation
+            if (_globalState.CurrentUser != null)
+            {
+                NavManager.NavigateTo("/inventory");
+            }
+        }
+        catch (Exception e)
+        {
+            _errorMessage = e.Message;
+        }
+    }
+}

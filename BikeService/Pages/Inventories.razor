@@ -1,0 +1,435 @@
+﻿@page "/inventory"
+@using Inventory.Data
+@using BikeService.Data
+@using Log.Data
+@using InventoryLog.Data
+
+<nav class="navbar top-container">
+    <h1 class="top-title">Inventory Details</h1>
+    <div>
+        @if (_globalState.CurrentUser!=null && _globalState.CurrentUser.UserRole == UserRole.Admin)
+        {
+        <a class="btn btn-primary check-logs" type="button" href="/logs">
+            <span class="oi oi-document plusIcon" /> Check Logs
+        </a>
+        
+            <button class="btn btn-primary add-btn" type="button" @onclick="OpenAddItemDialog">
+                <span class="oi oi-plus plusIcon" /> Add Items
+            </button>
+        }
+        
+    </div>
+</nav>
+
+<div class="filter-container">
+    <input type="search" class="search-bar" placeholder="Search by Item name" @oninput="SearchItemName" />
+</div>
+<!-- Table for inventories -->
+<table class="table main-table">
+    <!-- Table header assignment -->
+    <thead>
+        <tr class="table-row-head">
+            <th>
+                Item
+                <a class='btn-sort text-@(_sortBy == "itemName" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                   @onclick='()=>SortByHandler("itemName")'>
+                    <span class='sort-logo oi oi-sort-@(_sortBy == "itemName" ? _sortDirection : "ascending")' />
+                </a>
+            </th>
+            <th>
+                Quantity
+                <a class='btn-sort text-@(_sortBy == "quantity" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
+                   @onclick='()=>SortByHandler("quantity")'>
+                    <span class='sort-logo oi oi-sort-@(_sortBy == "quantity" ? _sortDirection : "ascending")' />
+                </a>
+            </th>
+            <th>Last Taken Out</th>
+            
+            @if (_globalState.CurrentUser != null && _globalState.CurrentUser.UserRole == UserRole.Admin)
+        {
+            <th>Actions</th>
+        }
+        </tr>
+    </thead>
+
+    <tbody class="table-body">
+        @{
+            IEnumerable<Inventory> itemList = _items;
+  
+            // Sort by item name.
+            if (_sortBy == "itemName")
+            {
+                itemList = _sortDirection == "ascending" ? itemList.OrderBy(t => t.Item) : itemList.OrderByDescending(t =>
+                t.Item);
+            }
+            // Sort by quantity.
+            else if (_sortBy == "quantity")
+            {
+                itemList = _sortDirection == "ascending" ? itemList.OrderBy(t => t.Quantity) : itemList.OrderByDescending(t =>
+                t.Quantity);
+            }
+            // Table data assignment.
+            foreach (var item in itemList)
+            {
+                <tr class="table-row">
+                    <td class="item-name">
+                        @item.Item @if (item.Quantity == 0)
+                        {
+                            <span class="out-of-stock">Out of stock!</span>
+                        }
+                        else if (item.Quantity <= 15)
+                        {
+                            <span class="low-stock">
+                                Low in stock!
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="in-stock">In stock</span>
+                        }
+                    </td>
+                    <td>@item.Quantity</td>
+                    <td>@item.LastTakenOut</td>
+                    @*Check if role is admin and display action items*@
+                    @if (_globalState.CurrentUser != null && _globalState.CurrentUser.UserRole == UserRole.Admin)
+                    {
+                        <td>
+                            <div class="action-container">
+                                <button class="btn btn-outline-secondary btn-sm" type="button"
+                                @onclick="()=>OpenEditItemDialog(item)">
+                                    <span class="oi oi-pencil" /> Edit
+                                </button>
+                                <button class="btn btn-outline-danger btn-sm" type="button" @onclick="()=>OpenDeleteItemDialog(item)">
+                                    <span class="oi oi-trash" /> Delete
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm" type="button" @onclick="()=>OpenRequestItemDialog(item)">
+                                    <span class="oi oi-document" /> Request
+                                </button>
+                            </div>
+                        </td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@if (_showAddItemDialog)
+{
+    <ModalDialog Title="Add Items" OnClose="@OnAddItemDialogClose" OkLabel="Add">
+        <form>
+            <div class="form-floating">
+                <input id="item1" type="text" class="form-control username mb-3" @bind="_itemname" placeholder="Item" />
+                <label for="item1">Item</label>
+            </div>
+            <div class="form-floating ">
+                <input id="quantity1" type="number" class="form-control mb-2" @bind="_quantity" placeholder="Password" />
+                <label for="quantity1">Quantity</label>
+            </div>
+
+            @if (!string.IsNullOrEmpty(_addItemErrorMessage))
+            {
+                <Alert Type="danger" Message="@_addItemErrorMessage" />
+            }
+        </form>
+    </ModalDialog>
+}
+
+
+@if (_showEditItemDialog)
+{
+    <ModalDialog Title="@_dialogTitle" OnClose="@OnEditItemDialogClose" OkLabel="@_dialogOkLabel">
+
+        <div class="form-floating mb-3">
+            <input id="itemName" type="text" class="form-control" @bind="_itemname" placeholder="Item Name" />
+            <label for="itemName">Item Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input min="0" type="number" class="form-control quantity" @bind="_quantity" placeholder="Quantity" />
+            <label for="quantity">Quantity</label>
+        </div>
+
+        @if (!string.IsNullOrEmpty(_editItemErrorMessage))
+        {
+            <Alert Type="danger" Message="@_editItemErrorMessage" />
+        }
+        </ModalDialog>
+}
+
+
+@if (_showDeleteItemDialog)
+{
+    <ModalDialog Title="Delete Item" OnClose="@OnDeleteItemDialogClose" OkLabel="Confirm">
+        <div class="icon-box">
+            <i class="material-icons">warning</i>
+        </div>
+        <p class="warning-message">Are you sure you want to delete <strong>@_inventoryModel.Item</strong> item and their data?</p>
+        @if (!string.IsNullOrEmpty(_deleteItemErrorMessage))
+        {
+            <Alert Type="danger" Message="@_deleteItemErrorMessage" />
+        }
+        </ModalDialog>
+}
+
+@if (_showRequestItemDialog)
+{
+    <ModalDialog Title="@_dialogTitle" OnClose="@OnRequestItemDialogClose" OkLabel="@_dialogOkLabel" HideCancelButton=!_isApprovalTimeValid>
+        @if (_isApprovalTimeValid)
+        {
+            <p>Request for: <strong>@_inventoryModel.Item</strong></p>
+            <p><strong>Note:</strong>Requests can only be approved on week days i.e. (Monday-Friday) between 9am - 4pm</p>
+            <div class="form-floating mb-3">
+                <input id="takenBy" type="text" class="form-control" @bind="_takenBy" placeholder="Take By" />
+                <label for="takenBy">Taken By:</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input min="0" type="number" class="form-control quantity" @bind="_quantityTaken" placeholder="Quantity Taken" />
+                <label for="quantity">Quantity Taken</label>
+            </div>
+
+            @if (!string.IsNullOrEmpty(_requestItemErrorMessage))
+            {
+                <Alert Type="danger" Message="@_requestItemErrorMessage" />
+            }
+        }
+        // If time not valid for request display deny modal.
+        else
+        {
+            <div class="icon-box">
+                <i class="material-icons">do_not_disturb</i>
+            </div>
+            <p class="req-deny"><strong>Note: </strong>Requests can only be approved on week days i.e. <span class="req-info"> (Monday-Friday)</span> between <span class="req-info">9am - 4pm</span></p>
+        }
+        </ModalDialog>
+}
+
+
+@code {
+    [CascadingParameter]
+    private GlobalState _globalState { get; set; }
+    private List<Inventory> _items { get; set; }
+    private List<User> _users { get; set; }
+    private Inventory _inventoryModel { get; set; }
+    private List<Log> _logs { get; set; }
+    private List<InventoryLog> _inventoryLogs { get; set; }
+    // Add item variables.
+    private bool _showAddItemDialog { get; set; }
+    private string _addItemErrorMessage { get; set; }
+    private string _itemname { get; set; }
+    private string _itemid { get; set; }
+    private int _quantity { get; set; }
+    private string _lasttakenout { get; set; }
+    // Edit item variables. 
+    private bool _showEditItemDialog { get; set; }
+    private string _editItemErrorMessage { get; set; }
+    // Delete item variable.
+    private bool _showDeleteItemDialog { get; set; }
+    private string _deleteItemErrorMessage { get; set; }
+    // Request item variables.
+    private bool _showRequestItemDialog { get; set; }
+    private string _requestItemErrorMessage { get; set; }
+    private string _takenBy { get; set; }
+    private int _quantityTaken { get; set; }
+    private string _itemTaken { get; set; }
+    private bool _isApprovalTimeValid = true;
+    // Sorting table variables.
+    private string _sortBy = "itemName";
+    private string _sortDirection = "ascending";
+    // Modal Dialog variables.
+    private string _dialogTitle { get; set; }
+    private string _dialogOkLabel { get; set; }
+
+
+    protected override void OnInitialized() 
+    {
+        _items = InventoryManagement.GetAll();
+        _logs = LogManagement.GetAll();
+        _inventoryLogs = InventoryLogManagement.GetAll();
+        _users = UserManagement.GetAll();
+
+    }
+    // Sorting Table in ascending or descending.
+    private void SortByHandler(string sortByName) 
+    {
+        if (_sortBy == sortByName)
+        {
+            _sortDirection = _sortDirection == "ascending" ? "descending" : "ascending";
+        }
+        else
+        {
+            _sortBy = sortByName;
+            _sortDirection = "ascending";
+        }
+    }
+    // Search by Item name.
+    private void SearchItemName(ChangeEventArgs e) 
+    {
+        var searchTerm = e.Value.ToString();
+        if (!string.IsNullOrEmpty(searchTerm) && searchTerm.Length > 1)
+        {
+            _items = InventoryManagement.GetAll().Where(t =>
+            t.Item.ToLower().Contains(searchTerm.ToLower())).ToList();
+        }
+        else
+        {
+            _items = InventoryManagement.GetAll();
+        }
+    }
+
+    private void OpenAddItemDialog()
+    {
+        _showAddItemDialog = true;
+        _itemname = "";
+        _quantity = 0;
+        _lasttakenout = "--"; // Default value for Last Taken Out if not taken.  
+    }
+
+    private void OnAddItemDialogClose(bool isCancel)
+    {
+        if (isCancel)
+        {
+            _addItemErrorMessage = "";
+            _showAddItemDialog = false;
+        }
+        else
+        {
+            try
+            {
+                _addItemErrorMessage = "";
+                _items = InventoryManagement.Create(_itemname, _quantity, _lasttakenout);
+                 // Creates the Log for the creation details.
+                _logs = LogManagement.CreationLog(_globalState.CurrentUser.Id, _itemname);
+                _showAddItemDialog = false;
+            }
+            catch (Exception e)
+            {
+                _addItemErrorMessage = e.Message;
+            }
+        }
+    }
+
+    private void OpenEditItemDialog(Inventory editItem)
+    {
+        _dialogTitle = "Edit Item";
+        _dialogOkLabel = "Save";
+        _inventoryModel = editItem;
+        _showEditItemDialog = true;
+        _quantity = _inventoryModel.Quantity;
+        _itemname = _inventoryModel.Item;
+    }
+
+    private void OnEditItemDialogClose(bool isCancel)
+    {
+        if (isCancel)
+        {
+            _showEditItemDialog = false;
+            _editItemErrorMessage = "";
+        }
+        else
+        {
+            try
+            {
+                _editItemErrorMessage = "";
+                _items = InventoryManagement.Update(_inventoryModel.Id, _itemname, _quantity); // Updates the item detail.
+                _showEditItemDialog = false;
+            }
+            catch (Exception e)
+            {
+                _editItemErrorMessage = e.Message;
+            }
+        }
+    }
+
+
+    private void OpenDeleteItemDialog(Inventory item)
+    {
+        _inventoryModel = item;
+        _showDeleteItemDialog = true;
+    }
+
+    private void OnDeleteItemDialogClose(bool isCancel)
+    {
+        if (isCancel)
+        {
+            _showDeleteItemDialog = false;
+            _inventoryModel = null;
+        }
+        else
+        {
+            try
+            {
+                _deleteItemErrorMessage = "";
+                _items = InventoryManagement.Delete(_inventoryModel.Id); // Deletes the item.
+                _logs = LogManagement.DeletionLog(_globalState.CurrentUser.Id, _inventoryModel.Item); // Creates the Log for the deletion details.
+                _showDeleteItemDialog = false;
+                _inventoryModel = null;
+            }
+            catch (Exception e)
+            {
+                _deleteItemErrorMessage = e.Message;
+            }
+        }
+    }
+
+    // Checks if requests can be made or not and structures modal dialog accordingly.
+    private void OpenRequestItemDialog(Inventory item) 
+    {
+        DateTime date = DateTime.Now;
+        // Checks approval day and time.
+        if (date.TimeOfDay <= new TimeSpan(9, 0, 0) || date.TimeOfDay > new TimeSpan(16, 0, 0) 
+        || date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday) 
+        {
+            _isApprovalTimeValid = false;
+        }
+        else
+        {
+            _isApprovalTimeValid = true;
+        }
+        // Changes Dialog title according to day & time.
+        _dialogTitle = _isApprovalTimeValid ? "Request Item" : "Request Item Denied"; 
+        // Changes Dialog button according to day & time.
+        _dialogOkLabel = _isApprovalTimeValid ? "Request" : "Okay"; 
+        _takenBy = "";
+        _inventoryModel = item;
+        _showRequestItemDialog = true;
+        _quantityTaken = 0;
+    }
+
+    // Creates Inventory Log and updates quantity after request.
+    private void OnRequestItemDialogClose(bool isCancel) 
+    {
+        var staff="";
+        // Check if username exists amongst staff names for storing existing value in variable
+        foreach (var user in _users)
+        {
+            if (_takenBy.ToLower() == user.Username.ToLower())
+            {
+               staff = user.Username;
+            }
+        }
+        if (isCancel || !_isApprovalTimeValid)
+        {
+            _showRequestItemDialog = false;
+            _requestItemErrorMessage = "";
+        }
+        else
+        {
+            try
+            {
+                _requestItemErrorMessage = "";
+                // Updates the quantity in inventory
+                _items = InventoryManagement.UpdateByRequest(_inventoryModel.Id, _quantityTaken, _takenBy);
+                // Creates the Inventory Log for request
+                _inventoryLogs = InventoryLogManagement.Create(_globalState.CurrentUser.Id, _quantityTaken, _inventoryModel.Item, staff);
+                _showRequestItemDialog = false;
+
+            }
+            catch (Exception e)
+            {
+                _requestItemErrorMessage = e.Message;
+            }
+        }
+    }
+}

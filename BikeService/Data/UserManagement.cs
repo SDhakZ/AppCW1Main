@@ -25,6 +25,7 @@ public static class UserManagement
         File.WriteAllText(appUsersFilePath, json);
       
     }
+
     // Reads a JSON string from a file on the local file system and deserializes it into a list of User objects.
     public static List<User> GetAll()
     {
@@ -50,23 +51,29 @@ public static class UserManagement
         {
             throw new Exception("Username already exists. Please enter another username");
         }
+
         if (UserRole == UserRole.Admin)
         {
             //Check admin count
             if (adminCount >= 2)
             {
-                throw new Exception("Admin count limit exceeded");
+                throw new Exception("Admin count limit exceeded (Max 2)");
             }
         }
 
-        if (username == "")
+        if (username == "" && password == "")
         {
-            throw new Exception("Please fill in the username field");
+            throw new Exception("Please fill in the fields above");
         }
 
-        if (password == "")
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
-            throw new Exception("Please fill in the password field");
+            throw new Exception("Please fill in both the username and password fields");
+        }
+
+        if (password.Length < 5)
+        {
+            throw new Exception("password must have more than 5 digits");
         }
 
         users.Add(
@@ -82,7 +89,7 @@ public static class UserManagement
             return users;      
     }
 
-    // This method helps to seed user when there are no user at the beginning of the appllication.
+    // This method helps to seed user when there are no user at the beginning of the application.
     public static void SeedUsers()
     {
         var users = GetAll().FirstOrDefault(x => x.UserRole == UserRole.Admin);
@@ -98,7 +105,6 @@ public static class UserManagement
         List<User> users = GetAll();
         return users.FirstOrDefault(x => x.Id == id);
     }
-
 
     // This method verifies the username and also the password (by checking hash) on login.
     public static User Login(string username, string password)
@@ -122,7 +128,7 @@ public static class UserManagement
         return user;
     }
 
-    // This method hels to remove the user from list of users and save it.
+    // This method helps to remove the user from list of users and save it.
     public static List<User> Delete(Guid id)
     {
         List<User> users = GetAll();
@@ -135,7 +141,6 @@ public static class UserManagement
 
         users.Remove(user);
         SaveAll(users);
-
         return users;
     }
 }

@@ -18,7 +18,9 @@
             <input autocomplete="off" type="password" id="password" class="fadeIn third" name="login" @bind="_password" placeholder="Password">
             @if (!string.IsNullOrEmpty(_errorMessage))
             {
+                <div class="mt-2" style="width:85%; margin:auto">
                 <Alert Type="danger" Message="@_errorMessage" />
+                    </div>
             }
             <input type="submit" class="fadeIn fourth" value="Log In">
         </form>

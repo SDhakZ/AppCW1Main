@@ -12,7 +12,8 @@
         <h1 class="top-title">Column chart for <span class="heading-info">(Lowest) Items taken out </span></h1>
     }
     <a class='btn-sort-top text-@(_sortBy == "quantity" ? "primary" : "secondary")' data-mdb-toggle="tooltip"
-       @onclick='()=>SortByHandler("quantity")'>Sort
+       @onclick='()=>SortByHandler("quantity")'>
+        Sort
         <span class='sort-logo-top oi oi-sort-@(_sortBy == "quantity" ? _sortDirection : "ascending")' />
     </a>
 </nav>
@@ -22,7 +23,7 @@
         @{
             Dictionary<string, int> requestedData = new Dictionary<string, int>();
             @*Iterates and add items in dictionary*@
-            foreach (var item in _inventoryLogs) 
+            foreach (var item in _inventoryLogs)
             {
                 string itemName = item.RequestedItem;
                 int totalQuantity = item.QuantityTaken;
@@ -113,7 +114,6 @@
                         font-weight: 600;
                         fill: #2C3639;
                     }
-
                 </style>
                 <text x="210" y="10" class="heavy">X-axis: Item names</text>
                 <text x="340" y="10" class="heavy">Y-axis:  Number taken out</text>
@@ -182,7 +182,7 @@
 
     }
 
-    private void SortByHandler(string sortByName) 
+    private void SortByHandler(string sortByName)
     {
         if (_sortBy == sortByName)
         {

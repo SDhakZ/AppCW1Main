@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-01-03T13:36:08.963</Modified>
+      <Modified>2023-01-04T15:41:39.093</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-01-03T13:36:08.433</Modified>
+      <Modified>2023-01-04T15:41:38.513</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BikeService.runtimeconfig.json">
       <PackagePath>BikeService.runtimeconfig.json</PackagePath>
-      <Modified>2023-01-03T13:36:08.082</Modified>
+      <Modified>2023-01-04T15:41:38.121</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\BikeService.dll">
       <PackagePath>BikeService.dll</PackagePath>
-      <Modified>2023-01-03T13:36:06.761</Modified>
+      <Modified>2023-01-04T15:41:35.495</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BikeService.exe</PackagePath>
-      <Modified>2023-01-03T13:36:06.957</Modified>
+      <Modified>2023-01-04T15:41:35.689</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.12\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1136,7 +1136,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\BikeService.deps.json">
       <PackagePath>BikeService.deps.json</PackagePath>
-      <Modified>2023-01-03T13:36:08.780</Modified>
+      <Modified>2023-01-04T15:41:38.874</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\.nuget\packages\microsoft.maui.controls.ref.win\6.0.548\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -1152,7 +1152,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
-      <Modified>2023-01-03T05:16:10.922</Modified>
+      <Modified>2023-01-04T15:35:04.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\.nuget\packages\mudblazor\6.1.6\staticwebassets\MudBlazor.min.css">
       <PackagePath>wwwroot\_content\MudBlazor\MudBlazor.min.css</PackagePath>
@@ -1164,331 +1164,331 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\BikeService.styles.css">
       <PackagePath>wwwroot\BikeService.styles.css</PackagePath>
-      <Modified>2023-01-03T11:26:54.396</Modified>
+      <Modified>2023-01-04T15:39:45.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\BikeService.bundle.scp.css">
       <PackagePath>wwwroot\BikeService.bundle.scp.css</PackagePath>
-      <Modified>2023-01-03T11:26:54.398</Modified>
+      <Modified>2023-01-04T15:39:45.728</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
-      <Modified>2023-01-03T05:17:11.463</Modified>
+      <Modified>2023-01-04T15:37:08.714</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\bootstrap\bootstrap.min.css">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css</PackagePath>
-      <Modified>2023-01-03T05:17:11.485</Modified>
+      <Modified>2023-01-04T15:37:08.754</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\bootstrap\bootstrap.min.css.map">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css.map</PackagePath>
-      <Modified>2023-01-03T05:17:11.503</Modified>
+      <Modified>2023-01-04T15:37:08.777</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css">
       <PackagePath>wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css</PackagePath>
-      <Modified>2023-01-03T05:17:11.578</Modified>
+      <Modified>2023-01-04T15:37:08.896</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\open-iconic\font\fonts\open-iconic.eot">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.eot</PackagePath>
-      <Modified>2023-01-03T05:17:11.610</Modified>
+      <Modified>2023-01-04T15:37:08.932</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\open-iconic\font\fonts\open-iconic.otf">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.otf</PackagePath>
-      <Modified>2023-01-03T05:17:11.627</Modified>
+      <Modified>2023-01-04T15:37:08.957</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\open-iconic\font\fonts\open-iconic.svg">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.svg</PackagePath>
-      <Modified>2023-01-03T05:17:11.648</Modified>
+      <Modified>2023-01-04T15:37:08.987</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\open-iconic\font\fonts\open-iconic.ttf">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.ttf</PackagePath>
-      <Modified>2023-01-03T05:17:11.666</Modified>
+      <Modified>2023-01-04T15:37:09.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\open-iconic\font\fonts\open-iconic.woff">
       <PackagePath>wwwroot\css\open-iconic\font\fonts\open-iconic.woff</PackagePath>
-      <Modified>2023-01-03T05:17:11.680</Modified>
+      <Modified>2023-01-04T15:37:09.032</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\open-iconic\FONT-LICENSE">
       <PackagePath>wwwroot\css\open-iconic\FONT-LICENSE</PackagePath>
-      <Modified>2023-01-03T05:17:11.522</Modified>
+      <Modified>2023-01-04T15:37:08.806</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\open-iconic\ICON-LICENSE">
       <PackagePath>wwwroot\css\open-iconic\ICON-LICENSE</PackagePath>
-      <Modified>2023-01-03T05:17:11.535</Modified>
+      <Modified>2023-01-04T15:37:08.825</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\css\open-iconic\README.md">
       <PackagePath>wwwroot\css\open-iconic\README.md</PackagePath>
-      <Modified>2023-01-03T05:17:11.549</Modified>
+      <Modified>2023-01-04T15:37:08.847</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\favicon.ico">
       <PackagePath>wwwroot\favicon.ico</PackagePath>
-      <Modified>2023-01-03T05:17:11.425</Modified>
+      <Modified>2023-01-04T15:37:08.655</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
-      <Modified>2023-01-03T06:56:18.186</Modified>
+      <Modified>2023-01-04T15:37:08.681</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.191</Modified>
+      <Modified>2023-01-04T15:41:33.982</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.205</Modified>
+      <Modified>2023-01-04T15:41:34.001</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.225</Modified>
+      <Modified>2023-01-04T15:41:34.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.257</Modified>
+      <Modified>2023-01-04T15:41:34.060</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.370</Modified>
+      <Modified>2023-01-04T15:41:34.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
-      <Modified>2023-01-03T05:16:10.879</Modified>
+      <Modified>2023-01-04T15:35:04.155</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2023-01-03T06:58:58.406</Modified>
+      <Modified>2023-01-04T15:41:34.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.648</Modified>
+      <Modified>2023-01-04T15:41:34.537</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.661</Modified>
+      <Modified>2023-01-04T15:41:34.552</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.674</Modified>
+      <Modified>2023-01-04T15:41:34.566</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.693</Modified>
+      <Modified>2023-01-04T15:41:34.585</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.763</Modified>
+      <Modified>2023-01-04T15:41:34.652</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.476</Modified>
+      <Modified>2023-01-04T15:41:34.336</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.479</Modified>
+      <Modified>2023-01-04T15:41:34.340</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.491</Modified>
+      <Modified>2023-01-04T15:41:34.357</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.482</Modified>
+      <Modified>2023-01-04T15:41:34.344</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.484</Modified>
+      <Modified>2023-01-04T15:41:34.348</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.458</Modified>
+      <Modified>2023-01-04T15:41:34.314</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.461</Modified>
+      <Modified>2023-01-04T15:41:34.317</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.473</Modified>
+      <Modified>2023-01-04T15:41:34.332</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.463</Modified>
+      <Modified>2023-01-04T15:41:34.322</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.467</Modified>
+      <Modified>2023-01-04T15:41:34.326</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.418</Modified>
+      <Modified>2023-01-04T15:41:34.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.421</Modified>
+      <Modified>2023-01-04T15:41:34.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.424</Modified>
+      <Modified>2023-01-04T15:41:34.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.427</Modified>
+      <Modified>2023-01-04T15:41:34.281</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.432</Modified>
+      <Modified>2023-01-04T15:41:34.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.437</Modified>
+      <Modified>2023-01-04T15:41:34.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.441</Modified>
+      <Modified>2023-01-04T15:41:34.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.454</Modified>
+      <Modified>2023-01-04T15:41:34.310</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.445</Modified>
+      <Modified>2023-01-04T15:41:34.298</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.448</Modified>
+      <Modified>2023-01-04T15:41:34.302</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.536</Modified>
+      <Modified>2023-01-04T15:41:34.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.541</Modified>
+      <Modified>2023-01-04T15:41:34.419</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.548</Modified>
+      <Modified>2023-01-04T15:41:34.425</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.556</Modified>
+      <Modified>2023-01-04T15:41:34.434</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.572</Modified>
+      <Modified>2023-01-04T15:41:34.453</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.511</Modified>
+      <Modified>2023-01-04T15:41:34.385</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.514</Modified>
+      <Modified>2023-01-04T15:41:34.390</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.519</Modified>
+      <Modified>2023-01-04T15:41:34.393</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.524</Modified>
+      <Modified>2023-01-04T15:41:34.398</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.532</Modified>
+      <Modified>2023-01-04T15:41:34.406</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.494</Modified>
+      <Modified>2023-01-04T15:41:34.359</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.497</Modified>
+      <Modified>2023-01-04T15:41:34.364</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.499</Modified>
+      <Modified>2023-01-04T15:41:34.368</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.503</Modified>
+      <Modified>2023-01-04T15:41:34.372</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.508</Modified>
+      <Modified>2023-01-04T15:41:34.378</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.577</Modified>
+      <Modified>2023-01-04T15:41:34.461</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.584</Modified>
+      <Modified>2023-01-04T15:41:34.468</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.592</Modified>
+      <Modified>2023-01-04T15:41:34.478</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.605</Modified>
+      <Modified>2023-01-04T15:41:34.490</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.639</Modified>
+      <Modified>2023-01-04T15:41:34.526</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.451</Modified>
+      <Modified>2023-01-04T15:41:34.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.461</Modified>
+      <Modified>2023-01-04T15:41:34.304</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.472</Modified>
+      <Modified>2023-01-04T15:41:34.318</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.488</Modified>
+      <Modified>2023-01-04T15:41:34.338</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2023-01-03T06:58:58.529</Modified>
+      <Modified>2023-01-04T15:41:34.386</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Pages\Inventories.razor.css">
       <PackagePath>Pages\Inventories.razor.css</PackagePath>
-      <Modified>2023-01-03T09:35:17.028</Modified>
+      <Modified>2023-01-04T15:35:03.360</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Pages\Login.razor.css">
       <PackagePath>Pages\Login.razor.css</PackagePath>
-      <Modified>2023-01-03T09:10:13.499</Modified>
+      <Modified>2023-01-04T15:35:03.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Shared\MainLayout.razor.css">
       <PackagePath>Shared\MainLayout.razor.css</PackagePath>
-      <Modified>2023-01-03T05:16:10.989</Modified>
+      <Modified>2023-01-04T15:35:04.357</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Shared\NavMenu.razor.css">
       <PackagePath>Shared\NavMenu.razor.css</PackagePath>
-      <Modified>2023-01-03T05:16:11.044</Modified>
+      <Modified>2023-01-04T15:35:04.470</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Pages\Dashboard.razor.css">
       <PackagePath>Pages\Dashboard.razor.css</PackagePath>
-      <Modified>2023-01-03T11:26:53.679</Modified>
+      <Modified>2023-01-04T15:35:03.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Pages\InventoryLogs.razor.css">
       <PackagePath>Pages\InventoryLogs.razor.css</PackagePath>
-      <Modified>2023-01-03T09:35:40.936</Modified>
+      <Modified>2023-01-04T15:35:03.408</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Pages\Logs.razor.css">
       <PackagePath>Pages\Logs.razor.css</PackagePath>
-      <Modified>2023-01-03T09:46:54.988</Modified>
+      <Modified>2023-01-04T15:35:03.494</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Pages\Users.razor.css">
       <PackagePath>Pages\Users.razor.css</PackagePath>
-      <Modified>2023-01-03T10:13:22.406</Modified>
+      <Modified>2023-01-04T15:35:03.538</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\OMEN\Desktop\year3 sem1\Application\courework\BikeService\BikeService\Shared\ModalDialog.razor.css">
       <PackagePath>Shared\ModalDialog.razor.css</PackagePath>
-      <Modified>2023-01-03T05:16:11.017</Modified>
+      <Modified>2023-01-04T15:35:04.410</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

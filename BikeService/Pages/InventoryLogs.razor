@@ -26,6 +26,7 @@
             {
                 <input type="search" class="search-bar" placeholder="Search by item taker" @oninput="SearchTakenBy" />
             }
+
             // Checks value for radio button to search according to Item name.
             if (_searchBy == "Item" || _searchBy == null) 
             {
@@ -142,6 +143,7 @@
             _sortDirection = "ascending";
         }
     }
+
     // Filters the data according to month.
     private void FilterByMonth() 
     {
@@ -156,6 +158,7 @@
             _inventoryLogs = InventoryLogManagement.GetAll();
         }
     }
+
     // Search handler.
     private void Search(ChangeEventArgs e, Func<InventoryLog, bool> searchPredicate) 
     {
@@ -170,16 +173,19 @@
             _inventoryLogs = InventoryLogManagement.GetAll();
         }
     }
+
     // Search by item taker.
     private void SearchTakenBy(ChangeEventArgs e) 
     {
         Search(e, t => t.TakenBy.ToLower().Contains(e.Value.ToString().ToLower()));
     }
+
     // Search by Item name.
     private void SearchItemName(ChangeEventArgs e) 
     {
         Search(e, t => t.RequestedItem.ToLower().Contains(e.Value.ToString().ToLower()));
     }
+
     // Assigns radio button value.
     private void SearchBy(string searchby)
     {

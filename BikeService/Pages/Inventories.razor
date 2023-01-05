@@ -177,7 +177,7 @@
         @if (_isApprovalTimeValid)
         {
             <p>Request for: <strong>@_inventoryModel.Item</strong></p>
-            <p><strong>Note:</strong>Requests can only be approved on week days i.e. (Monday-Friday) between 9am - 4pm</p>
+            <p><strong>Note:</strong> Requests can only be approved on week days i.e. (Monday-Friday) between 9am - 4pm</p>
             <div class="form-floating mb-3">
                 <input id="takenBy" type="text" class="form-control" @bind="_takenBy" placeholder="Take By" />
                 <label for="takenBy">Taken By:</label>
@@ -249,6 +249,7 @@
         _users = UserManagement.GetAll();
 
     }
+
     // Sorting Table in ascending or descending.
     private void SortByHandler(string sortByName) 
     {
@@ -262,6 +263,7 @@
             _sortDirection = "ascending";
         }
     }
+
     // Search by Item name.
     private void SearchItemName(ChangeEventArgs e) 
     {
@@ -379,6 +381,7 @@
     private void OpenRequestItemDialog(Inventory item) 
     {
         DateTime date = DateTime.Now;
+
         // Checks approval day and time.
         if (date.TimeOfDay <= new TimeSpan(9, 0, 0) || date.TimeOfDay > new TimeSpan(16, 0, 0) 
         || date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday) 

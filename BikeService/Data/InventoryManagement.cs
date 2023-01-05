@@ -20,6 +20,7 @@ public static class InventoryManagement
         var json = JsonSerializer.Serialize(inventories);
         File.WriteAllText(inventoryFilePath, json);
     }
+
     // Reads a JSON string from a file on the local file system and deserializes it into a list of Inventory objects.
     public static List<Inventory> GetAll()
     {
@@ -68,6 +69,7 @@ public static class InventoryManagement
         }
        
     }
+
     // Deletes the Inventory object with the given unique identifier from the list of existing Inventory objects
     public static List<Inventory> Delete(Guid id)
     {
@@ -84,6 +86,7 @@ public static class InventoryManagement
         SaveAll(inventories);
         return inventories;
     }
+
     // Updates the item name and quantity of the Inventory object with the given unique identifier in the list of existing Inventory objects, and saves the updated list to the file
     public static List<Inventory> Update(Guid id, string item, int quantity)
     {
@@ -97,7 +100,7 @@ public static class InventoryManagement
         }
         else if (quantity < 0)
         {
-            throw new Exception("The quantity must me greater than or equals to 0");
+            throw new Exception("The quantity must be greater than or equals to 0");
         }
         else
         {
@@ -107,6 +110,7 @@ public static class InventoryManagement
             return inventories;
         }
     }
+
     // Updates the quantity of the inventory after requests and validates if the requested item is in stock, and if the required field is properly filled.
     public static List<Inventory> UpdateByRequest(Guid id,int quantity,string takenBy)
     {
@@ -121,7 +125,7 @@ public static class InventoryManagement
         }
         if (quantity <= 0)
             {
-                throw new Exception("The quantity must me greater than 0");
+                throw new Exception("The request quantity must be greater than 0");
             }
         if (inventoryToUpdate.Quantity == 0)
             {
